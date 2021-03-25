@@ -113,25 +113,30 @@ header{
 	padding-right: 50px;
 }
 
+.pictures{
+	height: fit-content;
+}
+
 .pictures img{
 	margin-top: 40px;
 	margin-left: 150px;
 	top: 20%;
 	left:70%;
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 }
 
 footer{
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: fit-content;
+	height: 10%;
 	background: black;
 	color: white;
 	text-align:center;
-	padding-bottom: 10px;
+	padding-bottom: 100px;
 	padding-top: 10px;
+	font-size: 12px;
   }
 
   #linkedin{
@@ -279,7 +284,12 @@ footer{
 		margin-left: 10px;
 	}
 
+	.grid-container{
+		height: fit-content;
+	}
+
 	.grid-item2, .grid-item3, .grid-item4, .grid-item5{
+		font-size: 10px;
 		border: 5px solid white;
 	}
 
@@ -299,12 +309,15 @@ footer{
 		left: 35%;
 	}
 
-
 	.project1 h1, .project2 h1, .project3 h1{
-		font-size: 20px;
+		font-size: 15px;
 	}
   
 	.project1 p, .project2 p, .project3 p{
 		font-size: 5;
+	}
+
+	footer{
+		font-size: 10px;
 	}
   }
