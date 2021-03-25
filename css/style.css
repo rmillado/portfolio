@@ -280,7 +280,7 @@ footer{
 	}
 
 	.grid-item2, .grid-item3, .grid-item4, .grid-item5{
-		font-size:20px;
+		font-size: 10px;
 		border: 5px solid white;
 	}
 
@@ -292,7 +292,7 @@ footer{
 		font-size: 8px;
 		width: 30%;
 		height: 50%;
-		padding: 10px;
+		padding-top: 10px;
 		top: 25%;
 	}
 
@@ -302,14 +302,10 @@ footer{
 
 
 	.project1 h1, .project2 h1, .project3 h1{
-		font-size: 13px;
+		font-size: 20px;
 	}
-
+  
 	.project1 p, .project2 p, .project3 p{
 		font-size: 5;
 	}
-
-	footer{
-		font-size: 10px;
-	  }
   }
