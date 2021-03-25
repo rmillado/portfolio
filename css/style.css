@@ -302,10 +302,14 @@ footer{
 
 
 	.project1 h1, .project2 h1, .project3 h1{
-		font-size: 20px;
+		font-size: 13px;
 	}
   
 	.project1 p, .project2 p, .project3 p{
 		font-size: 5;
 	}
+	  
+	footer{
+		font-size: 10px;
+	  }
   }
