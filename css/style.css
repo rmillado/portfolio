@@ -11,6 +11,18 @@ header{
 	align-items:flex-end;
   }
 
+.logo{
+	animation-name: logo-change;
+  animation-duration: 4s;
+  overflow: hidden;
+  animation-fill-mode: forwards;
+}
+
+  @keyframes logo-change{
+	from{opacity: 0;}
+	to{opacity: 1;}
+  }
+
  .nav_links{
 	display: flex;
 	flex-direction: row;
@@ -28,8 +40,16 @@ header{
 
   .skip {
 	  text-decoration: none;
-	  color: black;
 	  font-size: 10px;
+	  color: black;
+	  opacity: 0;
+  }
+
+  .skip:focus{
+	  margin-left: 20px;
+	  margin-top: 10px;
+	  position: absolute;
+	  opacity: 100;
   }
 
   nav li {
@@ -44,20 +64,36 @@ header{
 	  max-height: 200px;
   }
 
+  .parallax {
+	background-image: url('../imgs/umich.png');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
   .me{
 	position: absolute;
 	top: 30%;
 	left: 10%;
-	width: 100%;
+	width: 80%;
 	height: 100%;
 	opacity: 95%;
 	size: 70%;
+  }
+
+  #me{
+	  height: 70%;
+	  width: 40%;
+	  margin-left: 500px;
   }
 
   h1{
 	  font-size: 50px;
 	  font-weight: bold;
   }
+
+
 
   .name{
 	position: absolute;
@@ -78,34 +114,40 @@ header{
 
   .nav_item1 a{
 	text-decoration: none;
+	font-size: 22px;
   }
 
   .about_me{
-	  background-color: lightskyblue;
+	  background-color: darkblue;
 	  position: absolute;
-	  top: 20%;
+	  top: 30%;
 	  right:10%;
 	  width: 60%;
 	  color: white;
-	  padding-left: 20px;
+	  padding-left: 100px;
 	  padding-right: 50px;
-	  height: 100%;
+	  height: 200%;
 	  text-align: left;
+	  line-height: 2;
+  }
+
+  .about_me{
+	padding-left: 70px;
   }
 
   .exp h1{
 	font-size: 75px;
-	color: lightskyblue;
+	color: darkblue;
 	text-align: center;
 }
 
   .grid {
-	left: 4%;
-	position: absolute;
 	display: grid;
 	grid-template-columns: auto auto;
-	background-color: lightskyblue;
+	background-color: darkblue;
 	padding: 10px;
+	margin: 20px;
+	align-items: center;
   }
   
 	#blockm{
@@ -113,14 +155,14 @@ header{
 	}
 
   .exp1{
-	  background-color: lightskyblue;
+	  background-color: darkblue;
 	  color: white;
 	  width: 50%;
 	  padding-left: 20px;
 	  padding-right: 50px;
   }
   .exp2{
-	background-color: lightskyblue;
+	background-color: darkblue;
 	color: white;
 	width: 50%;
 	align-content: right;
@@ -129,14 +171,15 @@ header{
 }
 
 .pictures{
+	display: grid;
+	grid-template-columns: auto;
+	row-gap: 10px;
 	height: fit-content;
 }
 
 .pictures img{
 	margin-top: 40px;
 	margin-left: 150px;
-	top: 20%;
-	left:70%;
 	width: 100px;
 	height: 100px;
 }
@@ -191,43 +234,29 @@ footer{
 	text-align: right;
   }
 
-  .project1{
-	background-color: lightskyblue;
+  .project1, .project2, .project3{
+	background-color: darkblue;
 	position: absolute;
-	top: 35%;
-	left:5%;
+	top: initial;
 	width: 25%;
 	color: white;
 	padding-left: 20px;
 	padding-right: 50px;
-	height: 100%;
+	height: 200%;
 	text-align: left;
+	line-height: 2;
+  }
+
+  .project1{
+	left:5%;
   }
 
   .project2{
-	background-color: lightskyblue;
-	position: absolute;
-	top: 35%;
 	right:37.5%;
-	width: 25%;
-	color: white;
-	padding-left: 20px;
-	padding-right: 50px;
-	height: 100%;
-	text-align: left;
   }
 
   .project3{
-	background-color: lightskyblue;
-	position: absolute;
-	top: 35%;
 	right:5%;
-	width: 25%;
-	color: white;
-	padding-left: 20px;
-	padding-right: 50px;
-	height: 100%;
-	text-align: left;
   }
 
   .project1 h1, .project2 h1, .project3 h1{
@@ -235,22 +264,81 @@ footer{
   }
 
   .project1 h6, .project2 h6, .project3 h6{
-	  color:gray;
+	  color:lightgray;
   }
 
+@media screen and (prefers-reduced-motion){
+	.logo{
+		animation-duration: 0s;
+	}
+	.parallax {
+		background-image: url('../imgs/umich.png');
+		background-attachment:scroll;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	  }
+}
+
+  /* tablet view */
+@media screen and (max-width: 768px){
+
+	#me{
+		height: 60%;
+		width: 50%;
+		margin-left: 200px;
+
+	}
+
+	.parallax{
+		background-size: 75%;
+	}
+
+	.project1, .project2, .project3{
+		width:30%;
+	}
+	.project2{
+		left: 35%;
+	}
+
+	.exp h1{
+		font-size: 40px;
+	}
+
+	.pictures img{
+		margin-left: 80px;
+	}
+
+	.project1 h1, .project2 h1, .project3 h1{
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+
+  /*mobile view*/
   @media only screen and (max-width: 600px) {
+	#me{
+		height: 60%;
+	  	width: 100%;
+	  	margin-left: 80px;
+	}
+
+	.parallax{
+		background-size: 75%;
+	}
+
 	  body{
 		  width: fit-content;
 	  }
-	header{
+	
+	  header{
 		width: fit-content;
 	  }
 
 	.nav_links{
-		
 		display:flex;
 		justify-content: space-around;
-		flex-direction: column;
+		flex-direction: row;
 	}
 	.name{
 		position: absolute;
@@ -259,6 +347,7 @@ footer{
 		margin-left: 20px;
 		border-top: 5px solid lightblue;
 		border-bottom: 5px solid lightblue;
+	
 	  }
 
 	  .me{
@@ -268,7 +357,7 @@ footer{
 	  
 	.pictures img{
 		margin-top: 50px;
-		margin-left: 0px;
+		margin-left: 50px;
 		top: 20%;
 		left:70%;
 		width: 55px;
@@ -288,7 +377,11 @@ footer{
 	}
 
 	.about_me{
-		height: fit-content;
+		left: 50%;
+		margin-top: 50px;
+		width: 70%;
+		top: initial;
+		height: 200%;
 	}
 
 	.exp h1{
@@ -297,14 +390,9 @@ footer{
 
 	.grid {
 		grid-template-columns: auto;
-		grid-template-rows: auto auto auto auto;
 	}
 	.grid-item1{
 		margin-left: 10px;
-	}
-
-	.grid-container{
-		height: fit-content;
 	}
 
 	.grid-item2, .grid-item3, .grid-item4, .grid-item5{
@@ -312,30 +400,42 @@ footer{
 		border: 5px solid white;
 	}
 
+
 	.project1, .project2, .project3{
-		width: fit-content;
-		height: fit-content;
+		top:initial;
+		position: absolute;
 		color: white;
 		border: 2px solid white;
 		padding: none;
 		margin: none;
 		font-size: 8px;
-		width: 30%;
-		height: 50%;
+		width: 40%;
+		height: 60%;
 		padding-top: 10px;
-		top: 30%;
+		
+	}
+
+
+
+	.project1{
+		left: 5%;
 	}
 
 	.project2{
-		left: 35%;
+		left: 42.5%;
+	}
+
+	.project3{
+		left: 80%;
 	}
 
 	.project1 h1, .project2 h1, .project3 h1{
-		font-size: 15px;
+		font-size: 12px;
 	}
   
 	.project1 p, .project2 p, .project3 p{
 		font-size: 5;
+		height: fit-content;
 	}
 
 	footer{
